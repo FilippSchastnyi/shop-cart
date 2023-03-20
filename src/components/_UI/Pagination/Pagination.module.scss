@@ -1,0 +1,62 @@
+@import '@css/config/colors.scss';
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+
+  a {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    transition: 0.3s all ease-in-out;
+    color: $color-grey;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+}
+
+.active {
+  border-radius: 20%;
+  transition: 0.3s all ease-in-out;
+  color: $color-blue;
+  background: $color-light-blue;
+}
+
+.nextBtn {
+  margin-left: 10px;
+}
+
+.previousBtn {
+  padding: 0 7px;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  user-select: none;
+  &:hover{
+    opacity: 0.5;
+  }
+}
+
+.prevBtn {
+  padding: 0 7px;
+  display: inline-block;
+  position: relative;
+}
+
+.previous {
+  width: 10px;
+  height: 2px;
+  display: block;
+  top: 0;
+  left: 50%;
+  background-color: black;
+}

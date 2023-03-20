@@ -1,0 +1,62 @@
+@import '@css/config/colors';
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 24px;
+  text-align: center;
+  white-space: nowrap;
+  appearance: none;
+  background: $color-primary;
+  color: $color-white;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &--auto{
+    width: auto;
+  }
+
+  &--lg {
+    width: 240px;
+  }
+
+  &--md {
+    width: 180px;
+  }
+
+  &--sm {
+    width: 100px;
+    padding: 5px 12px;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  &--w100 {
+    width: 100%;
+  }
+
+  &--outlined {
+    background: $color-white;
+    color: $color-primary;
+    border: 2px solid $color-primary;
+    transition: opacity 0.3s ease-in-out ;
+  }
+
+  &--selected{
+      background: $color-primary;
+      color: $color-white;
+      transition: opacity 0.3s ease-in-out ;
+     &:hover{
+      opacity: 1;
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    user-select: none;
+  }
+}

@@ -1,0 +1,20 @@
+@import 'src/css/config/grid';
+@import 'src/css/mixins/media-queries';
+
+.container {
+  margin: 0 auto;
+  padding: 0 95px;
+  max-width: $desktopWidth;
+  @include no-desktop {
+    max-width: $laptopMedia;
+  }
+
+  @include tablet-and-mobile {
+    max-width: 100%;
+    padding: 0 40px;
+  }
+
+  @include mobile {
+    padding: 0 20px;
+  }
+}

@@ -1,0 +1,17 @@
+@import '@css/config/colors';
+
+.header {
+  background-color: $color-navy-blue;
+  min-height: 50px;
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}

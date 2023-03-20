@@ -1,0 +1,31 @@
+@import '@css/config/colors.scss';
+
+.Input {
+  position: relative;
+
+  input {
+    width: 100%;
+    font-size: 20px;
+    line-height: 24px;
+    color: $color-grey;
+    border: none;
+    border-bottom: 1px solid $color-grey;
+    background-color: $color-white;
+    padding: 10px;
+  }
+
+  label {
+    position: absolute;
+    pointer-events: none;
+    top: -18px;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
+    color: $color-grey-text;
+    font-size: 20px;
+  }
+}
+.inputError {
+  color: $color-error;
+}

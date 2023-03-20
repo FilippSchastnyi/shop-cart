@@ -1,0 +1,37 @@
+@import 'src/css/config/grid';
+
+@mixin desktop() {
+  @media (min-width: $tabletMedia + 1) {
+    @content;
+  }
+}
+
+@mixin no-desktop() {
+  @media (max-width: $desktopWidth) {
+    @content;
+  }
+}
+
+@mixin tablet-and-mobile() {
+  @media (max-width: $tabletMedia) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: $mobileMedia) {
+    @content;
+  }
+}
+
+@mixin mobile-s() {
+  @media (max-width: $mobileMediaSmall) {
+    @content;
+  }
+}
+
+@mixin desktop-small-height {
+  @media (max-height: 750px) and (min-width: $tabletMedia + 1) {
+    @content;
+  }
+}

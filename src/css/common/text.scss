@@ -1,0 +1,107 @@
+@import 'src/css/mixins';
+@import 'src/css/config/colors';
+
+.title {
+  color: $color-dark-blue;
+  font-size: 32px;
+  font-style: normal;
+  letter-spacing: normal;
+  @include mobile {
+    margin-top: 15px;
+    font-size: 24px;
+  }
+
+  &--main {
+    font-size: 72px;
+    line-height: 102px;
+    color: $color-grey-40;
+    @include tablet-and-mobile {
+      font-size: 48px;
+      line-height: 42px;
+    }
+    @include mobile {
+      font-size: 42px;
+      line-height: 40px;
+    }
+  }
+
+  &--subtitle {
+    font-size: 32px;
+    line-height: 36px;
+    color: $color-grey-40;
+    @include tablet-and-mobile {
+      font-size: 28px;
+      line-height: 32px;
+    }
+    @include mobile {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+}
+
+.text {
+  font-size: 18px;
+  line-height: 20px;
+  color: $color-dark-blue;
+  @include mobile {
+    font-size: 16px;
+  }
+
+  &--10{
+    font-size: 10px;
+  }
+  &--12{
+    font-size: 12px;
+  }
+  &--14{
+    font-size: 14px;
+  }
+  &--16{
+    font-size: 16px;
+  }
+  &--18{
+    font-size: 18px;
+  }
+  &--20{
+    font-size: 20px;
+  }
+  &--22{
+    font-size: 22px;
+  }
+  &--24{
+    font-size: 24px;
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--blue-80 {
+    color: $color-blue-80;
+  }
+
+  &--green {
+    color: $color-light-green;
+  }
+
+  &--grey {
+    color: $color-grey-text;
+  }
+}
+
+.subtext {
+  font-size: 12px;
+  line-height: 15px;
+  @include mobile {
+    font-size: 10px;
+  }
+
+  &--grey {
+    color: $color-grey;
+  }
+
+  &--green {
+    color: $color-light-green;
+  }
+}
