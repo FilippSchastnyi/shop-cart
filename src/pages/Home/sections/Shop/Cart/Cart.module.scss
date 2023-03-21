@@ -1,0 +1,20 @@
+@import "@css/config/colors.scss";
+
+.container {
+  flex: 0 1 40%;
+  padding: 10px;
+  position: relative;
+}
+
+.content {
+
+}
+
+.total {
+  border-top: 1px solid $color-grey-60;
+  position: absolute;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

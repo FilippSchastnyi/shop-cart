@@ -13,9 +13,10 @@ enum OperationVariant {
 type NumericProps = {
   onIncrementNumber: (value: number) => void
   onDecrementNumber: (value: number) => void
+  limit: number
 }
 
-const Numeric = ({ onIncrementNumber, onDecrementNumber }: NumericProps) => {
+const Numeric = ({ onIncrementNumber, onDecrementNumber, limit }: NumericProps) => {
   const [value, setValue] = useState(0)
 
   const onHandleButtonClick = (variant: OperationVariant): void => {
@@ -67,6 +68,7 @@ const Numeric = ({ onIncrementNumber, onDecrementNumber }: NumericProps) => {
         onClick={() => {
           onHandleButtonClick(OperationVariant.PLUS)
         }}
+        disabled={value >= limit}
       >
         <InlineSVG
           title="Increase value"

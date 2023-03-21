@@ -1,0 +1,8 @@
+@import '@css/config/colors';
+
+.container{
+  box-shadow: $box-shadow;
+  border-radius: 8px;
+  display: flex;
+  min-height: 500px;
+}
