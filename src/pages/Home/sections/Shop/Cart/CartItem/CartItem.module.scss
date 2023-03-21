@@ -1,0 +1,15 @@
+@import "@css/config/colors.scss";
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $color-grey-60;
+  border-radius: 8px;
+  padding: 10px;
+  flex: 1 1 1px;
+}
+
+.left{
+  display: flex;
+  flex-direction: column;
+}
