@@ -9,11 +9,6 @@
   z-index: 1001;
   background-color: white;
   button{
-    padding: 0;
-    background-color: inherit;
-    display: flex;
-    align-items: center;
-    margin-right: 5px;
     &:active{
       .svgIcons{
         width: 22px;

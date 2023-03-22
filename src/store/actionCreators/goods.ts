@@ -4,15 +4,24 @@ import {GOODS_API} from "@src/constants";
 
 export const createNewGoods = createAsyncThunk(
   'goods/createNewGoods',
-  async (goodsData: GoodsType) => {
-    const response = await fetch(`${GOODS_API}`,{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json;charset=utf-8'
-      },
-      body: JSON.stringify(goodsData)
-    })
-    return response.json()
+  async (goodsData: Omit<GoodsType, 'id'>, thunkAPI) => {
+    try {
+      const response = await fetch(`${GOODS_API}`,{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(goodsData)
+      })
+      const json = await response.json()
+      if (json.message){
+        return thunkAPI.rejectWithValue(json.message)
+      }
+      return json
+    }
+    catch (e){
+      return thunkAPI.rejectWithValue("Something went wrong with your request")
+    }
   }
 )
 
@@ -27,6 +36,25 @@ export const removeGoodsById = createAsyncThunk(
         },
       })
       return {id}
+    }
+    catch (e){
+      return thunkAPI.rejectWithValue("Something went wrong with your request")
+    }
+  }
+)
+
+export const updateGoods = createAsyncThunk(
+  'goods/updateGoods',
+  async (goodsData: Array<GoodsType>, thunkAPI) => {
+    try {
+      await fetch(`${GOODS_API}`,{
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(goodsData)
+      })
+      return goodsData
     }
     catch (e){
       return thunkAPI.rejectWithValue("Something went wrong with your request")

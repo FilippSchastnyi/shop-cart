@@ -6,8 +6,9 @@ import Button from '@ui/Button/Button'
 import Flyout from '@ui/Flyout/Flyout'
 import {useTypedDispatch} from "@src/hooks/redux";
 import {removeGoodsById} from "@src/store/actionCreators/goods";
-import productActionGroupCss from './ProductActionGroup.module.scss'
 import {cartSlice} from "@src/store/reducers/cartSlice";
+import GoodsForm from "@pages/Home/sections/Shop/Goods/GoodsForm/GoodsForm";
+import productActionGroupCss from './ProductActionGroup.module.scss'
 
 const ProductActionGroup = ({ isLogged, id }: { isLogged: boolean, id: string }) => {
   const [isFlyoutOpen, setIsFlyoutOpen] = useState(false)
@@ -61,7 +62,9 @@ const ProductActionGroup = ({ isLogged, id }: { isLogged: boolean, id: string })
       </Button>
       <Flyout
         isOpen={isFlyoutOpen}
-        closeFlyout={closeFlyout} />
+        closeFlyout={closeFlyout} >
+        <GoodsForm id={id} onComplete={closeFlyout}/>
+      </Flyout>
     </div>
   )
 }
