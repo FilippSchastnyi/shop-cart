@@ -8,7 +8,7 @@
   text-align: center;
   white-space: nowrap;
   appearance: none;
-  background: $color-primary;
+  background-color: $color-primary;
   color: $color-white;
 
   &:hover {
@@ -34,6 +34,10 @@
     font-size: 18px;
   }
 
+  &--link{
+    background-color: inherit;
+  }
+
   &--w100 {
     width: 100%;
   }
@@ -43,15 +47,6 @@
     color: $color-primary;
     border: 2px solid $color-primary;
     transition: opacity 0.3s ease-in-out ;
-  }
-
-  &--selected{
-      background: $color-primary;
-      color: $color-white;
-      transition: opacity 0.3s ease-in-out ;
-     &:hover{
-      opacity: 1;
-    }
   }
 
   &[disabled] {

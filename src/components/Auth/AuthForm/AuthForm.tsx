@@ -7,7 +7,7 @@ import FormValidationService from '@src/ts/services/FormValidationService'
 import Button from '@ui/Button/Button'
 import { useContext } from 'react'
 import { AuthContext } from '@src/contexts/AuthContext'
-import {UserType} from "@src/ts/types";
+import { UserType } from '@src/ts/types'
 
 interface IAuthFormProps {
   variant: AuthVariant.Registration | AuthVariant.LogIn
@@ -27,8 +27,8 @@ const AuthForm = ({ variant, completeAuthMethod }: IAuthFormProps) => {
       ? authContext.login(formData)
       : authContext.register(formData)
 
-      completeAuthMethod()
-      methods.reset()
+    completeAuthMethod()
+    methods.reset()
   }
 
   return (
@@ -37,7 +37,7 @@ const AuthForm = ({ variant, completeAuthMethod }: IAuthFormProps) => {
         onSubmit={methods.handleSubmit((data) => {
           const user: UserType = {
             email: data.email,
-            password: data.password
+            password: data.password,
           }
           onHandleSubmitForm(user, variant)
         })}

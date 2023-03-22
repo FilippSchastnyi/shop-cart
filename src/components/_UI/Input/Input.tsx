@@ -17,16 +17,15 @@ const Input = ({
   errors,
 }: InputProps) => {
   const idGen = useId()
-  const inputType = type
   return (
     <div className={InputCss.Input}>
       <input
         name={name}
         {...register}
-        type={inputType}
-        id={`${inputType}-${idGen}`}
+        type={type}
+        id={`${type}-${idGen}`}
       />
-      <label htmlFor={`${inputType}-${idGen}`}>{label}</label>
+      <label htmlFor={`${type}-${idGen}`}>{label}</label>
       <p className={InputCss.inputError}>{errors[name]?.message}</p>
     </div>
   )

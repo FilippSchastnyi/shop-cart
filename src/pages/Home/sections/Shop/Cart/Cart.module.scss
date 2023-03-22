@@ -2,15 +2,19 @@
 
 .container {
   flex: 0 1 40%;
-  padding: 10px;
+  padding: 10px 10px 60px 10px;
   position: relative;
 }
 
-.content {
-
+.item {
+  margin-top: 5px;
 }
 
 .total {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   border-top: 1px solid $color-grey-60;
   position: absolute;
   height: 50px;

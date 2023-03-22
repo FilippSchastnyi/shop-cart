@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {GoodsType} from "@src/ts/types";
 import Numeric from "@ui/Numeric/Numeric";
 import {useTypedDispatch} from "@src/hooks/redux";
 import {cartSlice} from "@src/store/reducers/cartSlice";
 import ProductActionGroup from "@pages/Home/sections/Shop/Goods/ProductCard/ProductActionGroup/ProductActionGroup";
+import {AuthContext} from "@src/contexts/AuthContext";
 import cardCss from './ProductCard.module.scss'
 
 const ProductCard = ({name, price, quantity, id}: GoodsType) => {
   const dispatch = useTypedDispatch()
   const {addItemToCart, removeItemFromCart} = cartSlice.actions
-
+  const authContext = useContext(AuthContext)
+  const isUserLogIn = !!authContext.user?.email
   const onIncrementNumber =()=> {
     dispatch(addItemToCart({name, price, id}))
   }
@@ -24,7 +26,7 @@ const ProductCard = ({name, price, quantity, id}: GoodsType) => {
       <span className='text--18 text--bold'>Left : {quantity}</span>
       </div>
       <div className={cardCss.right}>
-        <ProductActionGroup isLogged id={id}/>
+        <ProductActionGroup isLogged={isUserLogIn} id={id}/>
       <Numeric
         onIncrementNumber={onIncrementNumber}
         onDecrementNumber={onDecrementNumber}

@@ -11,9 +11,11 @@ import FlyoutCss from './Flyout.module.scss'
 type FlyoutType = {
   isOpen: boolean,
   closeFlyout: ()=> void
+  children: React.ReactNode
 }
 
-const Flyout = ({ isOpen, closeFlyout }: FlyoutType): JSX.Element | null => {
+const Flyout = ({ isOpen, closeFlyout, children }: FlyoutType): JSX.Element | null => {
+
   if (!isOpen) return null
   return (
     <Portal>
@@ -34,7 +36,9 @@ const Flyout = ({ isOpen, closeFlyout }: FlyoutType): JSX.Element | null => {
               height={24}
               src={close}/>
           </Button>
-
+          <div>
+            {children}
+          </div>
         </div>
       </>
     </Portal>

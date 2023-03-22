@@ -1,7 +1,19 @@
+@import "@css/config/colors.scss";
+
 .container{
   min-height: 100%;
   flex: 0 1 60%;
-  border-right: 1px solid red;
+  border-right: 1px solid $color-grey-60;
   position: relative;
   padding: 10px;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item{
+  margin-top: 5px;
 }

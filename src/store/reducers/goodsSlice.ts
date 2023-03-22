@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import {GoodsType} from "@src/ts/types";
-import {createNewGoods, getAllGoods, removeGoodsById} from "@src/store/actionCreators/goods";
+import {createNewGoods, getAllGoods, removeGoodsById, updateGoods} from "@src/store/actionCreators/goods";
 
 type ActionPayloadType = PayloadAction<any>
 
@@ -42,6 +42,20 @@ export const goodsSlice = createSlice({
         state.data.splice(itemIndex, 1)
       })
       .addCase(removeGoodsById.rejected, (state, action) => {
+        state.isLoading = false
+        state.error = action.payload as string
+      })
+      .addCase(updateGoods.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(updateGoods.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.data = state.data.map(item => {
+          const newItemData = action.payload.find(newItem => newItem.id === item.id);
+          return newItemData || item;
+        });
+      })
+      .addCase(updateGoods.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.payload as string
       })

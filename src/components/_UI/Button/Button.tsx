@@ -33,13 +33,6 @@ interface ButtonProps {
    * Determines the default behavior of the button
    */
   type?: 'button' | 'submit' | 'reset' | undefined
-  /**
-   * Choose one of the button view type
-   */
-  isSelected?: boolean
-  /**
-   * It Shows if button was selected (it needs to show specific selected element)
-   */
 }
 
 const Button = ({
@@ -50,14 +43,12 @@ const Button = ({
   showSpinner = false,
   disabled = false,
   type = 'button',
-  isSelected = false,
 }: ButtonProps): JSX.Element => {
 
   const cls = [
     ButtonCss.btn,
     ButtonCss[`btn--${size}`],
     ButtonCss[`btn--${variant}`],
-    isSelected && ButtonCss[`btn--selected`]
   ]
 
   return (
